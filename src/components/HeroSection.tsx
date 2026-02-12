@@ -80,19 +80,19 @@ const HeroSection = () => {
 
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center lg:justify-start mb-6 md:mb-8 opacity-0 animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              <a
+              {/* <a
                 href="tel:+639508230467"
                 className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 bg-secondary/50 rounded-full text-xs md:text-sm text-muted-foreground hover:text-primary hover:bg-secondary transition-all"
               >
                 <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
                 +63 950 823 0467
-              </a>
+              </a> */}
               <a
-                href="mailto:jhonebuan@gmail.com"
+                href="mailto:jhonrneilebuan@gmail.com"
                 className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 bg-secondary/50 rounded-full text-xs md:text-sm text-muted-foreground hover:text-primary hover:bg-secondary transition-all"
               >
                 <Mail className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                jhonebuan@gmail.com
+                jhonrneilebuan@gmail.com
               </a>
               <span className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 bg-secondary/50 rounded-full text-xs md:text-sm text-muted-foreground">
                 <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4" />
