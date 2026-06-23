@@ -13,7 +13,7 @@ const AboutSection = () => {
     {
       icon: GraduationCap,
       title: "BSIT Student",
-      description: "Major in System Development at PHINMA University of Pangasinan (2022 - Present)",
+      description: "Major in System Development at PHINMA University of Pangasinan (2022 - 2026)",
       color: "from-blue-500 to-cyan-500",
     },
     {
