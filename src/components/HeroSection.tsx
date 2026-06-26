@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { Mail, MapPin, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import profileImage from "@/assets/profile.jpg";
 import { useMouseParallax } from "@/hooks/useParallax";
@@ -13,7 +13,7 @@ const HeroSection = () => {
   });
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-24 md:pt-20 pb-12 relative overflow-hidden">
+    <section className="min-h-[100svh] flex items-center justify-center pt-24 md:pt-20 pb-12 relative overflow-hidden">
       {/* Background effects with parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
       <div 
@@ -34,10 +34,10 @@ const HeroSection = () => {
           <div className="relative opacity-0 animate-scale-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative">
               {/* Outer glow ring */}
-              <div className="absolute inset-0 w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-primary opacity-20 blur-xl animate-pulse" />
+              <div className="absolute inset-0 w-44 h-44 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-primary opacity-20 blur-xl animate-pulse" />
               
               {/* Profile container */}
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/40 glow-primary">
+              <div className="relative w-44 h-44 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/40 glow-primary">
                 <img
                   src={profileImage}
                   alt="Jhon R-Neil C. Ebuan"
@@ -54,13 +54,13 @@ const HeroSection = () => {
           </div>
 
           {/* Content */}
-          <div className="text-center lg:text-left max-w-xl">
+          <div className="text-center lg:text-left max-w-xl w-full">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-primary/10 rounded-full mb-4 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-primary text-xs md:text-sm font-medium">Available for opportunities</span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 opacity-0 animate-fade-in break-words" style={{ animationDelay: "0.4s" }}>
               Hi, I'm{" "}
               <span className="text-gradient block lg:inline">
                 {displayedText}
@@ -70,7 +70,7 @@ const HeroSection = () => {
               </span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            <p className="text-base sm:text-xl md:text-2xl text-muted-foreground mb-4 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
               <span className="text-foreground font-medium">Mobile Developer</span> & System Development Specialist
             </p>
             
@@ -89,23 +89,23 @@ const HeroSection = () => {
               </a> */}
               <a
                 href="mailto:jhonrneilebuan@gmail.com"
-                className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 bg-secondary/50 rounded-full text-xs md:text-sm text-muted-foreground hover:text-primary hover:bg-secondary transition-all"
+                className="flex min-w-0 items-center justify-center gap-2 px-3 py-2 md:px-4 bg-secondary/50 rounded-full text-xs md:text-sm text-muted-foreground hover:text-primary hover:bg-secondary transition-all"
               >
-                <Mail className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                jhonrneilebuan@gmail.com
+                <Mail className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />
+                <span className="truncate">jhonrneilebuan@gmail.com</span>
               </a>
-              <span className="flex items-center justify-center gap-2 px-3 py-2 md:px-4 bg-secondary/50 rounded-full text-xs md:text-sm text-muted-foreground">
-                <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                Mangaldan, Pangasinan
+              <span className="flex min-w-0 items-center justify-center gap-2 px-3 py-2 md:px-4 bg-secondary/50 rounded-full text-xs md:text-sm text-muted-foreground">
+                <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 shrink-0" />
+                <span className="truncate">Mangaldan, Pangasinan</span>
               </span>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start opacity-0 animate-fade-in px-4 sm:px-0" style={{ animationDelay: "0.8s" }}>
-              <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary px-6 md:px-8 rounded-full text-sm md:text-base">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary px-6 md:px-8 rounded-full text-sm md:text-base">
                 <a href="#contact">Get In Touch</a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground rounded-full text-sm md:text-base">
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground rounded-full text-sm md:text-base">
                 <a href="#projects">View Projects</a>
               </Button>
             </div>

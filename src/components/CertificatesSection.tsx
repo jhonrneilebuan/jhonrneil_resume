@@ -1,7 +1,8 @@
-import { Award, ExternalLink } from "lucide-react";
+import { Award, Calendar, ExternalLink, GraduationCap } from "lucide-react";
 import phinmaIese from "@/assets/certificates/phinma-iese.jpg";
 import designThinking from "@/assets/certificates/design-thinking.jpg";
 import pythonSololearn from "@/assets/certificates/python-sololearn.png";
+import ibmCybersecurityFundamentals from "@/assets/certificates/ibm-cybersecurity-fundamentals.jpg";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -9,9 +10,17 @@ interface Certificate {
   issuer: string;
   date: string;
   image: string;
+  imageClassName?: string;
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Cybersecurity Fundamentals",
+    issuer: "IBM SkillsBuild",
+    date: "June 2026",
+    image: ibmCybersecurityFundamentals,
+    imageClassName: "object-contain p-4 bg-white",
+  },
   {
     title: "From Argentina to the World: Overcoming Challenges and Embracing Opportunities",
     issuer: "PHINMA Education & IESE Business School",
@@ -37,39 +46,35 @@ const CertificatesSection = () => {
   const { ref: gridRef, isVisible: gridVisible, getDelay } = useStaggeredAnimation(certificates.length);
 
   return (
-    <section id="certificates" className="py-24 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[120px]" />
-      
+    <section id="certificates" className="py-16 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
         <div 
           ref={headerAnimation.ref}
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-10 md:mb-16 transition-all duration-700 ${
             headerAnimation.isVisible 
               ? "opacity-100 translate-y-0" 
               : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+          <span className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 bg-primary/10 text-primary rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
             <Award className="w-4 h-4" />
             Achievements
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
             My <span className="text-gradient">Certificates</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
             Professional certifications and training programs that showcase my commitment to continuous learning
           </p>
         </div>
 
         {/* Certificates Grid */}
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div ref={gridRef} className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6 max-w-7xl mx-auto">
           {certificates.map((cert, index) => (
             <div
               key={cert.title}
-              className={`group bg-card/50 backdrop-blur-sm border border-border rounded-3xl overflow-hidden hover:border-primary/40 transition-all duration-500 ${
+              className={`group flex h-full flex-col overflow-hidden rounded-xl border border-border/80 bg-card shadow-card transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_18px_45px_hsl(var(--primary)/0.16)] ${
                 gridVisible 
                   ? "opacity-100 translate-y-0" 
                   : "opacity-0 translate-y-8"
@@ -77,27 +82,35 @@ const CertificatesSection = () => {
               style={getDelay(index)}
             >
               {/* Certificate Image */}
-              <div className="relative aspect-[4/3] overflow-hidden bg-secondary/30">
+              <div className="relative aspect-[4/3] overflow-hidden border-b border-border/70 bg-secondary/40">
                 <img
                   src={cert.image}
                   alt={cert.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className={`h-full w-full ${cert.imageClassName ?? "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-10 h-10 rounded-full bg-primary/90 flex items-center justify-center">
-                    <ExternalLink className="w-5 h-5 text-primary-foreground" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute bottom-3 right-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <ExternalLink className="h-4 w-4" />
                   </div>
                 </div>
               </div>
 
               {/* Certificate Info */}
-              <div className="p-6">
-                <h3 className="font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+              <div className="flex flex-1 flex-col p-4 md:p-5">
+                <h3 className="mb-4 text-sm md:text-base font-semibold leading-snug text-foreground transition-colors group-hover:text-primary">
                   {cert.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-1">{cert.issuer}</p>
-                <p className="text-xs text-primary font-medium">{cert.date}</p>
+                <div className="mt-auto space-y-2 border-t border-border/70 pt-4">
+                  <p className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <GraduationCap className="h-4 w-4 shrink-0 text-primary" />
+                    <span className="line-clamp-1">{cert.issuer}</span>
+                  </p>
+                  <p className="flex items-center gap-2 text-sm font-medium text-primary">
+                    <Calendar className="h-4 w-4 shrink-0" />
+                    {cert.date}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

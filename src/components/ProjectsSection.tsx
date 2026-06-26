@@ -107,7 +107,7 @@ const ProjectsSection = () => {
   } = useStaggeredAnimation(projects.length);
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section id="projects" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] -translate-y-1/2" />
 
@@ -115,7 +115,7 @@ const ProjectsSection = () => {
         {/* Section Header */}
         <div
           ref={headerAnimation.ref}
-          className={`text-center mb-20 transition-all duration-700 ${
+            className={`text-center mb-12 md:mb-20 transition-all duration-700 ${
             headerAnimation.isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
@@ -124,10 +124,10 @@ const ProjectsSection = () => {
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             Portfolio
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
             A showcase of my work spanning web applications, mobile apps, and
             game development
           </p>
@@ -136,7 +136,7 @@ const ProjectsSection = () => {
         {/* Projects Grid */}
         <div
           ref={gridRef}
-          className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
+          className="grid lg:grid-cols-2 gap-5 md:gap-8 max-w-6xl mx-auto"
         >
           {projects.map((project, index) => {
             const CardWrapper = project.link ? "a" : "div";
@@ -152,7 +152,7 @@ const ProjectsSection = () => {
               <CardWrapper
                 key={project.title}
                 {...cardProps}
-                className={`group relative bg-card/50 backdrop-blur-sm border border-border rounded-3xl p-8 hover:border-primary/40 hover:bg-card/80 transition-all duration-500 block cursor-pointer ${
+                className={`group relative bg-card/50 backdrop-blur-sm border border-border rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 hover:border-primary/40 hover:bg-card/80 transition-all duration-500 block cursor-pointer ${
                   gridVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
@@ -160,30 +160,30 @@ const ProjectsSection = () => {
                 style={getDelay(index)}
               >
                 {/* Project number badge */}
-                <div className="absolute -top-3 -left-3 w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-sm shadow-lg">
+                <div className="absolute -top-2 -left-2 md:-top-3 md:-left-3 w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-xs md:text-sm shadow-lg">
                   0{index + 1}
                 </div>
 
                 {/* Hover arrow */}
-                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <ArrowUpRight className="w-5 h-5 text-primary" />
+                <div className="absolute top-4 right-4 md:top-6 md:right-6 w-9 h-9 md:w-10 md:h-10 rounded-full bg-secondary flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                  <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                 </div>
 
                 {/* Header with folder icon */}
-                <div className="flex items-start gap-4 mb-5">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                    <Folder className="w-7 h-7 text-primary" />
+                <div className="flex items-start gap-3 md:gap-4 mb-5 pr-10 md:pr-12">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <Folder className="w-6 h-6 md:w-7 md:h-7 text-primary" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-primary transition-colors break-words">
                       {project.title}
                     </h3>
-                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5" />
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs md:text-sm text-muted-foreground">
+                      <span className="flex items-center gap-1.5 min-w-0">
+                        <Calendar className="w-3.5 h-3.5 shrink-0" />
                         {project.year}
                       </span>
-                      <span className="w-1 h-1 rounded-full bg-muted-foreground" />
+                      <span className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground" />
                       <span>{project.role}</span>
                     </div>
                   </div>
@@ -199,7 +199,7 @@ const ProjectsSection = () => {
                   {project.highlights.map((highlight, i) => (
                     <li
                       key={i}
-                      className="text-sm text-muted-foreground flex items-start gap-3"
+                    className="text-sm text-muted-foreground flex items-start gap-2.5 md:gap-3"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
                       <span>{highlight}</span>

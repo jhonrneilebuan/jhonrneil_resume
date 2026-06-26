@@ -37,7 +37,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-secondary/30 relative overflow-hidden" ref={parallax1.ref}>
+    <section id="about" className="py-16 md:py-32 bg-secondary/30 relative overflow-hidden" ref={parallax1.ref}>
       {/* Background decorations with parallax */}
       <div 
         className="absolute top-0 left-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-primary/5 rounded-full blur-[150px] md:blur-[200px] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out"
@@ -54,7 +54,7 @@ const AboutSection = () => {
           {/* Section Header */}
           <div 
             ref={headerAnimation.ref}
-            className={`text-center mb-12 md:mb-20 transition-all duration-700 ${
+            className={`text-center mb-10 md:mb-20 transition-all duration-700 ${
               headerAnimation.isVisible 
                 ? "opacity-100 translate-y-0" 
                 : "opacity-0 translate-y-8"
@@ -74,7 +74,7 @@ const AboutSection = () => {
           {/* Profile Summary Card */}
           <div 
             ref={cardAnimation.ref}
-            className={`relative bg-card/60 backdrop-blur-md border border-border/50 rounded-2xl md:rounded-3xl p-6 md:p-10 lg:p-14 mb-12 md:mb-20 overflow-hidden shadow-card transition-all duration-700 delay-100 hover:border-primary/30 hover:shadow-lg ${
+            className={`relative bg-card/60 backdrop-blur-md border border-border/50 rounded-2xl md:rounded-3xl p-5 md:p-10 lg:p-14 mb-10 md:mb-20 overflow-hidden shadow-card transition-all duration-700 delay-100 hover:border-primary/30 hover:shadow-lg ${
               cardAnimation.isVisible 
                 ? "opacity-100 translate-y-0" 
                 : "opacity-0 translate-y-8"
@@ -84,22 +84,22 @@ const AboutSection = () => {
             <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-gradient-primary opacity-5 blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 md:w-64 h-48 md:h-64 bg-accent/10 blur-3xl rounded-full" />
             
-            <div className="flex items-start gap-4 md:gap-5 mb-6 md:mb-8 relative z-10">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-lg glow-primary">
+            <div className="flex items-start gap-3 md:gap-5 mb-6 md:mb-8 relative z-10">
+              <div className="w-11 h-11 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-lg glow-primary">
                 <Zap className="w-6 h-6 md:w-8 md:h-8 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-1 md:mb-2">Who I Am</h3>
+                <h3 className="text-lg md:text-2xl font-bold mb-1 md:mb-2">Who I Am</h3>
                 <p className="text-sm md:text-base text-muted-foreground">A passionate creator of digital solutions</p>
               </div>
             </div>
             
-            <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed relative z-10">
-              I am a BSIT student majoring in System Development at PHINMA University of Pangasinan, 
-              specializing in mobile and web development. Passionate about software development and 
-              problem-solving, I build efficient, user-friendly applications. Skilled in programming, 
-              databases, and modern frameworks, I continuously enhance my expertise to create 
-              innovative and scalable solutions.
+            <p className="text-sm md:text-lg lg:text-xl text-muted-foreground leading-relaxed relative z-10">
+              I am a BSIT graduate majoring in System Development from PHINMA University of Pangasinan, 
+              specializing in web and mobile application development. Passionate about software development 
+              and problem-solving, I develop efficient and user-friendly solutions using modern technologies. 
+              Through internship and academic projects, I have gained experience in React, Flutter, .NET, 
+              and PostgreSQL while continuously expanding my technical skills.
             </p>
           </div>
 
@@ -108,7 +108,7 @@ const AboutSection = () => {
             {highlights.map((item, index) => (
               <div
                 key={item.title}
-                className={`group relative bg-card/60 backdrop-blur-md border border-border/50 rounded-xl md:rounded-2xl p-5 md:p-6 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${
+                className={`group relative bg-card/60 backdrop-blur-md border border-border/50 rounded-xl md:rounded-2xl p-4 md:p-6 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl ${
                   gridVisible 
                     ? "opacity-100 translate-y-0" 
                     : "opacity-0 translate-y-8"

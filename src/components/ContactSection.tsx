@@ -103,7 +103,7 @@ const ContactSection = () => {
                   {info.href ? (
                     <a
                       href={info.href}
-                      className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1 group/link"
+                      className="max-w-full break-all text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors inline-flex items-center justify-center gap-1 group/link"
                     >
                       {info.value}
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity" />
