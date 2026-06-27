@@ -12,26 +12,26 @@ const AboutSection = () => {
   const highlights = [
     {
       icon: GraduationCap,
-      title: "BSIT Student",
-      description: "Major in System Development at PHINMA University of Pangasinan (2022 - 2026)",
+      title: "BSIT Graduate",
+      description: "Major in System Development at PHINMA University of Pangasinan, June 2026",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      icon: Smartphone,
-      title: "Mobile Developer",
-      description: "Specializing in Flutter, React Native, and native Android development",
+      icon: Globe,
+      title: "Cybersecurity Foundation",
+      description: "Knowledge in cybersecurity fundamentals, networking, Windows, and Linux systems",
       color: "from-purple-500 to-pink-500",
     },
     {
-      icon: Globe,
-      title: "Web Developer",
-      description: "Building modern web apps using ReactJS, MongoDB & NodeJS",
+      icon: Code,
+      title: "Software Development",
+      description: "Experience with C#, Python, React, .NET, PostgreSQL, and MongoDB",
       color: "from-orange-500 to-amber-500",
     },
     {
-      icon: Code,
-      title: "Full Stack Developer",
-      description: "Building complete solutions with React, Node.js, and MongoDB",
+      icon: Smartphone,
+      title: "Web & Mobile Apps",
+      description: "Built academic and internship projects using React, Flutter, Node.js, and Express.js",
       color: "from-green-500 to-emerald-500",
     },
   ];
@@ -64,10 +64,10 @@ const AboutSection = () => {
               About Me
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
-              Passionate <span className="text-gradient">Developer</span>
+              Systems & <span className="text-gradient">Security-Focused</span> Developer
             </h2>
             <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-              Crafting digital experiences with modern technologies
+              Building technical skills across software development, cybersecurity, networking, and operating systems
             </p>
           </div>
 
@@ -90,16 +90,17 @@ const AboutSection = () => {
               </div>
               <div>
                 <h3 className="text-lg md:text-2xl font-bold mb-1 md:mb-2">Who I Am</h3>
-                <p className="text-sm md:text-base text-muted-foreground">A passionate creator of digital solutions</p>
+                <p className="text-sm md:text-base text-muted-foreground">A BSIT graduate focused on secure and practical digital solutions</p>
               </div>
             </div>
             
             <p className="text-sm md:text-lg lg:text-xl text-muted-foreground leading-relaxed relative z-10">
-              I am a BSIT graduate majoring in System Development from PHINMA University of Pangasinan, 
-              specializing in web and mobile application development. Passionate about software development 
-              and problem-solving, I develop efficient and user-friendly solutions using modern technologies. 
-              Through internship and academic projects, I have gained experience in React, Flutter, .NET, 
-              and PostgreSQL while continuously expanding my technical skills.
+              I am a BSIT graduate majoring in System Development from PHINMA University of Pangasinan,
+              with hands-on experience from internship and academic projects. I have a strong foundation
+              in cybersecurity fundamentals, networking, Windows and Linux operating systems, and
+              problem-solving, complemented by software development experience using C#, Python, React,
+              .NET, and PostgreSQL. I am eager to start a career in cybersecurity while continuously
+              learning and contributing to the protection of digital systems and information.
             </p>
           </div>
 

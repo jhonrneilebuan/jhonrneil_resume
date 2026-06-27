@@ -1,4 +1,4 @@
-import { Award, Calendar, ExternalLink, GraduationCap } from "lucide-react";
+import { Award, Calendar, GraduationCap } from "lucide-react";
 import phinmaIese from "@/assets/certificates/phinma-iese.jpg";
 import designThinking from "@/assets/certificates/design-thinking.jpg";
 import pythonSololearn from "@/assets/certificates/python-sololearn.png";
@@ -88,12 +88,6 @@ const CertificatesSection = () => {
                   alt={cert.title}
                   className={`h-full w-full ${cert.imageClassName ?? "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="absolute bottom-3 right-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg">
-                    <ExternalLink className="h-4 w-4" />
-                  </div>
-                </div>
               </div>
 
               {/* Certificate Info */}
