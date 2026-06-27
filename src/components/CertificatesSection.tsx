@@ -4,6 +4,7 @@ import designThinking from "@/assets/certificates/design-thinking.jpg";
 import pythonSololearn from "@/assets/certificates/python-sololearn.png";
 import ibmCybersecurityFundamentals from "@/assets/certificates/ibm-cybersecurity-fundamentals.jpg";
 import courseraSecurityRisks from "@/assets/certificates/coursera-hs5tnzcn0jg8.png";
+import courseraNetworkSecurity from "@/assets/certificates/coursera-b43fxq0xeao5.png";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -15,6 +16,13 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Connect and Protect: Networks and Network Security",
+    issuer: "Google / Coursera",
+    date: "June 2026",
+    image: courseraNetworkSecurity,
+    imageClassName: "object-contain p-3 bg-white",
+  },
   {
     title: "Play It Safe: Manage Security Risks",
     issuer: "Google / Coursera",
@@ -78,7 +86,7 @@ const CertificatesSection = () => {
         </div>
 
         {/* Certificates Grid */}
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 md:gap-6 max-w-7xl mx-auto">
+        <div ref={gridRef} className="grid md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto">
           {certificates.map((cert, index) => (
             <div
               key={cert.title}
@@ -94,7 +102,7 @@ const CertificatesSection = () => {
                 <img
                   src={cert.image}
                   alt={cert.title}
-                  className={`h-full w-full ${cert.imageClassName ?? "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
+                  className={`h-full w-full ${cert.imageClassName ?? "object-contain p-3 bg-white"} transition-transform duration-500 group-hover:scale-[1.03]`}
                 />
               </div>
 
