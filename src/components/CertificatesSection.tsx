@@ -3,6 +3,7 @@ import phinmaIese from "@/assets/certificates/phinma-iese.jpg";
 import designThinking from "@/assets/certificates/design-thinking.jpg";
 import pythonSololearn from "@/assets/certificates/python-sololearn.png";
 import ibmCybersecurityFundamentals from "@/assets/certificates/ibm-cybersecurity-fundamentals.jpg";
+import courseraSecurityRisks from "@/assets/certificates/coursera-hs5tnzcn0jg8.png";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -14,6 +15,13 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Play It Safe: Manage Security Risks",
+    issuer: "Google / Coursera",
+    date: "June 2026",
+    image: courseraSecurityRisks,
+    imageClassName: "object-contain p-3 bg-white",
+  },
   {
     title: "Cybersecurity Fundamentals",
     issuer: "IBM SkillsBuild",
@@ -70,7 +78,7 @@ const CertificatesSection = () => {
         </div>
 
         {/* Certificates Grid */}
-        <div ref={gridRef} className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6 max-w-7xl mx-auto">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 md:gap-6 max-w-7xl mx-auto">
           {certificates.map((cert, index) => (
             <div
               key={cert.title}
