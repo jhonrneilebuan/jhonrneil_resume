@@ -5,6 +5,7 @@ import pythonSololearn from "@/assets/certificates/python-sololearn.png";
 import ibmCybersecurityFundamentals from "@/assets/certificates/ibm-cybersecurity-fundamentals.jpg";
 import courseraSecurityRisks from "@/assets/certificates/coursera-hs5tnzcn0jg8.png";
 import courseraNetworkSecurity from "@/assets/certificates/coursera-b43fxq0xeao5.png";
+import courseraLinuxSql from "@/assets/certificates/coursera-cntbvleui7ar.png";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -16,6 +17,13 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Tools of the Trade: Linux and SQL",
+    issuer: "Google / Coursera",
+    date: "June 2026",
+    image: courseraLinuxSql,
+    imageClassName: "object-contain p-3 bg-white",
+  },
   {
     title: "Connect and Protect: Networks and Network Security",
     issuer: "Google / Coursera",
