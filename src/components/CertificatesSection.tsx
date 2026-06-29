@@ -7,6 +7,7 @@ import courseraSecurityRisks from "@/assets/certificates/coursera-hs5tnzcn0jg8.p
 import courseraNetworkSecurity from "@/assets/certificates/coursera-b43fxq0xeao5.png";
 import courseraLinuxSql from "@/assets/certificates/coursera-cntbvleui7ar.png";
 import courseraAssetsThreats from "@/assets/certificates/coursera-96klzttjv5gt.png";
+import courseraDetectionResponse from "@/assets/certificates/coursera-au14ntrz9dce.png";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -18,6 +19,13 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Sound the Alarm: Detection and Response",
+    issuer: "Google / Coursera",
+    date: "June 2026",
+    image: courseraDetectionResponse,
+    imageClassName: "object-contain p-3 bg-white",
+  },
   {
     title: "Assets, Threats, and Vulnerabilities",
     issuer: "Google / Coursera",
