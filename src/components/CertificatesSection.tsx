@@ -6,6 +6,7 @@ import ibmCybersecurityFundamentals from "@/assets/certificates/ibm-cybersecurit
 import courseraSecurityRisks from "@/assets/certificates/coursera-hs5tnzcn0jg8.png";
 import courseraNetworkSecurity from "@/assets/certificates/coursera-b43fxq0xeao5.png";
 import courseraLinuxSql from "@/assets/certificates/coursera-cntbvleui7ar.png";
+import courseraAssetsThreats from "@/assets/certificates/coursera-96klzttjv5gt.png";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -17,6 +18,13 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Assets, Threats, and Vulnerabilities",
+    issuer: "Google / Coursera",
+    date: "June 2026",
+    image: courseraAssetsThreats,
+    imageClassName: "object-contain p-3 bg-white",
+  },
   {
     title: "Tools of the Trade: Linux and SQL",
     issuer: "Google / Coursera",
