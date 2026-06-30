@@ -23,7 +23,7 @@ const certificates: Certificate[] = [
   {
     title: "Automate Cybersecurity Tasks with Python",
     issuer: "Google / Coursera",
-    date: "June 2026",
+    date: "July 2026",
     image: courseraPythonAutomation,
     imageClassName: "object-contain p-3 bg-white",
   },
