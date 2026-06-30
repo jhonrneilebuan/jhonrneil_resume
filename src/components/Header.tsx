@@ -29,7 +29,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ["about", "projects", "certificates", "skills", "contact"];
+    const sections = ["home", "about", "experience", "projects", "certificates", "skills", "contact"];
     
     const observerOptions = {
       root: null,
@@ -55,8 +55,9 @@ const Header = () => {
 
   const navLinks = [
     { href: "#about", label: "About" },
+    { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
-    { href: "#certificates", label: "Certificates" },
+    { href: "#certificates", label: "Certifications" },
     { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
   ];
@@ -66,7 +67,7 @@ const Header = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="text-2xl font-bold text-gradient relative group">
+          <a href="#home" className="text-2xl font-bold text-gradient relative group">
             JE
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
           </a>
@@ -79,7 +80,7 @@ const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm transition-colors duration-300 group ${
+                  className={`relative px-2.5 lg:px-3 py-2 text-xs lg:text-sm transition-colors duration-300 group ${
                     isActive 
                       ? "text-primary font-medium" 
                       : "text-muted-foreground hover:text-foreground"

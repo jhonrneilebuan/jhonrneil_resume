@@ -8,8 +8,9 @@ const socialLinks = [
 
 const footerLinks = [
   { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#certificates", label: "Certificates" },
+  { href: "#certificates", label: "Certifications" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
@@ -26,7 +27,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-8 py-8 sm:grid-cols-2 md:grid-cols-[1.2fr_0.8fr_0.8fr] md:gap-10 md:py-12">
           <div className="sm:col-span-2 md:col-span-1">
-            <a href="#" className="mb-4 inline-flex items-center gap-3">
+            <a href="#home" className="mb-4 inline-flex items-center gap-3">
               <span className="flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-xl bg-primary/10 text-base md:text-lg font-bold text-primary">
                 JE
               </span>
@@ -35,7 +36,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Software Developer • Web & Mobile Application Developer
+              Aspiring Cybersecurity Analyst - Software Developer
             </p>
             <div className="mt-5 space-y-2 text-sm text-muted-foreground">
               <a
@@ -97,7 +98,7 @@ const Footer = () => {
             className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-all hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
             aria-label="Back to top"
           >
-            {/* Back to top */}
+            Back to top
             <ArrowUp className="h-4 w-4" />
           </button>
         </div>

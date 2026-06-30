@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CertificatesSection from "@/components/CertificatesSection";
 import SkillsSection from "@/components/SkillsSection";
@@ -10,12 +11,15 @@ import SectionTransition from "@/components/SectionTransition";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <Header />
       <main>
         <HeroSection />
         <SectionTransition direction="up">
           <AboutSection />
+        </SectionTransition>
+        <SectionTransition direction="up" delay={50}>
+          <ExperienceSection />
         </SectionTransition>
         <SectionTransition direction="left" delay={100}>
           <ProjectsSection />

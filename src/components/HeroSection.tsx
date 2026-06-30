@@ -13,7 +13,7 @@ const HeroSection = () => {
   });
 
   return (
-    <section className="min-h-[100svh] flex items-center justify-center pt-24 md:pt-20 pb-12 relative overflow-hidden">
+    <section id="home" className="min-h-[100svh] flex items-center justify-center pt-24 md:pt-20 pb-12 relative overflow-hidden">
       {/* Background effects with parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
       <div 
@@ -71,11 +71,11 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-base sm:text-xl md:text-2xl text-muted-foreground mb-4 md:mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-              <span className="text-foreground font-medium">Mobile Developer</span> & System Development Specialist
+              <span className="text-foreground font-medium">Aspiring Cybersecurity Analyst</span> | Software Developer
             </p>
             
             <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 leading-relaxed opacity-0 animate-fade-in px-2 md:px-0" style={{ animationDelay: "0.6s" }}>
-              BSIT student at PHINMA University of Pangasinan, passionate about building efficient, user-friendly applications that make a difference.
+              BSIT graduate from PHINMA University of Pangasinan with hands-on experience in web and mobile development, cybersecurity fundamentals, networking, and database technologies.
             </p>
 
             {/* Contact Info */}

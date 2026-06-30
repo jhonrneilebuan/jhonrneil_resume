@@ -47,12 +47,16 @@ const skillCategories = [
 ];
 
 const technicalFocus = [
+  "Cybersecurity Fundamentals",
+  "Networking",
+  "Linux",
+  "SQL",
+  "Threats & Vulnerabilities",
+  "Detection & Response",
   "Web Application Development",
   "Mobile Application Development",
   "Backend Development",
   "Database Management",
-  "Version Control",
-  "UI Design Tools",
 ];
 
 const SkillsSection = () => {

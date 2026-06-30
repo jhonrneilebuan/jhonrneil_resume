@@ -99,13 +99,13 @@ const CertificatesSection = () => {
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 bg-primary/10 text-primary rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
             <Award className="w-4 h-4" />
-            Achievements
+            Certifications
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
-            My <span className="text-gradient">Certificates</span>
+            My <span className="text-gradient">Certifications</span>
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            Professional certifications and training programs that showcase my commitment to continuous learning
+            Cybersecurity, technical, and professional training credentials that support my continuous learning
           </p>
         </div>
 

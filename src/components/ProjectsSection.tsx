@@ -1,4 +1,12 @@
-import { Calendar, Folder, ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  BriefcaseBusiness,
+  Code2,
+  Gamepad2,
+  MonitorSmartphone,
+  ShoppingBag,
+  Utensils,
+} from "lucide-react";
 import { Badge } from "./ui/badge";
 import {
   useScrollAnimation,
@@ -7,221 +15,249 @@ import {
 
 interface Project {
   title: string;
-  description: string;
-  tech: string[];
   year: string;
+  period: string;
   role: string;
+  badge?: string;
+  description: string;
   highlights: string[];
+  tech: string[];
   link?: string;
+  icon: typeof Code2;
 }
 
 const projects: Project[] = [
   {
     title: "CDA Routing System",
-    description:
-      "A paperless document routing system developed to streamline internal document workflows, reduce manual paperwork, and improve operational efficiency for the Cooperative Development Authority (CDA).",
-    tech: ["React", "TypeScript", "C#", ".NET", "PostgreSQL"],
-    year: "Jan 2026 - Apr 2026",
+    year: "2026",
+    period: "Jan 2026 - Apr 2026",
     role: "Routing System Intern",
+    badge: "Internship Project",
+    description:
+      "An internal workflow platform for the Cooperative Development Authority that digitizes document routing from upload to tracking, with built-in communication tools for users.",
     highlights: [
-      "Developed a paperless document routing system to streamline internal document workflows.",
-      "Implemented file upload and sharing functionalities for efficient document management.",
-      "Developed a real-time chat and announcement system to improve communication among users.",
-      "Enhanced workflow transparency through document tracking and routing features.",
+      "Structured the document lifecycle around routing status, visibility, and handoffs.",
+      "Added file upload, sharing, tracking, announcements, and chat as workflow modules.",
+      "Built the system with React, TypeScript, C#, .NET, and PostgreSQL.",
     ],
+    tech: ["React", "TypeScript", "C#", ".NET", "PostgreSQL"],
+    icon: BriefcaseBusiness,
   },
   {
     title: "DisabilityCareers",
+    year: "2025",
+    period: "2024 - 2025",
+    role: "Full Stack Developer",
     description:
       "A job-matching platform that connects persons with disabilities (PWDs) to inclusive employers. It helps PWDs find accessible job opportunities while guiding companies on inclusive hiring and workplace accessibility.",
-    tech: ["ReactJS", "MongoDB", "NodeJS"],
-    year: "2024 - 2025",
-    role: "Full Stack Developer",
     highlights: [
       "Developed a job-matching platform that connects persons with disabilities (PWDs) with inclusive employers.",
       "Provided accessible job opportunities for PWDs while supporting companies in adopting inclusive hiring practices and improving workplace accessibility.",
       "Integrated job postings from companies committed to disability inclusion.",
       "Implemented filtering options that match job seekers to roles based on their skills and needs.",
     ],
+    tech: ["ReactJS", "MongoDB", "NodeJS"],
     link: "https://disability-careers-gixk.onrender.com",
-  },
-  {
-    title: "A&J AutoFix",
-    description:
-      "A comprehensive online platform designed to streamline and enhance the vehicle repair and maintenance booking process. The platform provides a seamless and efficient experience for both vehicle owners and service providers.",
-    tech: ["Flutter", "Dart", "MongoDB", "NodeJS", "Firebase"],
-    year: "2024",
-    role: "Full Stack Developer",
-    highlights: [
-      "Developed a full-stack vehicle service booking platform enabling users to schedule maintenance and repair services",
-      "Added multiple service categories including tire replacement, windshield repair, and oil changes",
-      "Integrated real-time notifications for booking confirmations and status updates",
-      "Built a secure backend using Node.js and MongoDB to manage users, bookings, and service data efficiently",
-    ],
+    icon: Code2,
   },
   {
     title: "Gear Brawl",
+    year: "2025",
+    period: "2025",
+    role: "Game Developer",
     description:
       "A multiplayer action game developed using Unity and C# with 3D assets created in Blender.",
-    tech: ["Unity", "C#", "Blender"],
-    year: "2025",
-    role: "Game Developer",
     highlights: [
-      "Developed a real-time multiplayer game in Unity using Photon to enable online gameplay",
-      "Implemented core systems such as matchmaking, lobby creation, and player synchronization for seamless multiplayer experience",
-      "Conducted testing and debugging to optimize performance and enhance overall user experience",
+      "Developed a real-time multiplayer game in Unity using Photon to enable online gameplay.",
+      "Implemented core systems such as matchmaking, lobby creation, and player synchronization for seamless multiplayer experience.",
+      "Conducted testing and debugging to optimize performance and enhance overall user experience.",
     ],
+    tech: ["Unity", "C#", "Blender"],
+    icon: Gamepad2,
+  },
+  {
+    title: "A&J AutoFix",
+    year: "2024",
+    period: "2024",
+    role: "Full Stack Developer",
+    description:
+      "A comprehensive online platform designed to streamline and enhance the vehicle repair and maintenance booking process. The platform provides a seamless and efficient experience for both vehicle owners and service providers.",
+    highlights: [
+      "Developed a full-stack vehicle service booking platform enabling users to schedule maintenance and repair services.",
+      "Added multiple service categories including tire replacement, windshield repair, and oil changes.",
+      "Integrated real-time notifications for booking confirmations and status updates.",
+      "Built a secure backend using Node.js and MongoDB to manage users, bookings, and service data efficiently.",
+    ],
+    tech: ["Flutter", "Dart", "MongoDB", "NodeJS", "Firebase"],
+    icon: MonitorSmartphone,
   },
   {
     title: "Bibilibeads",
+    year: "2023",
+    period: "2023",
+    role: "Full Stack Developer",
     description:
       "An e-commerce platform that lets you shop for colorful beads and customize unique accessories! Mix and match designs to create stunning bracelets, necklaces, and charms.",
-    tech: ["Android Studio", "Kotlin", "Laravel"],
-    year: "2023",
-    role: "Full Stack Developer",
     highlights: [
-      "Customizable accessories creation",
-      "Drag-and-drop customization feature",
+      "Customizable accessories creation.",
+      "Drag-and-drop customization feature.",
     ],
+    tech: ["Android Studio", "Kotlin", "Laravel"],
+    icon: ShoppingBag,
   },
   {
     title: "Weastern Oceanic Grandeur",
+    year: "2022",
+    period: "2022",
+    role: "Front-End Developer",
     description:
       "A restaurant reservation website that allows users to book a table, select the number of guests, and explore the menu including appetizers, drinks, and main dishes.",
-    tech: ["HTML", "CSS"],
-    year: "2022",
-    role: "Front-End Developer",
     highlights: [
-      "Simple reservation system with capacity selection",
-      "Responsive & user-friendly design",
+      "Simple reservation system with capacity selection.",
+      "Responsive & user-friendly design.",
     ],
+    tech: ["HTML", "CSS"],
+    icon: Utensils,
   },
 ];
 
 const ProjectsSection = () => {
   const headerAnimation = useScrollAnimation();
   const {
-    ref: gridRef,
-    isVisible: gridVisible,
+    ref: timelineRef,
+    isVisible: timelineVisible,
     getDelay,
   } = useStaggeredAnimation(projects.length);
 
   return (
-    <section id="projects" className="py-16 md:py-24 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] -translate-y-1/2" />
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section Header */}
+    <section id="projects" className="py-16 md:py-24">
+      <div className="container mx-auto px-4 md:px-6">
         <div
           ref={headerAnimation.ref}
-            className={`text-center mb-12 md:mb-20 transition-all duration-700 ${
+          className={`mx-auto mb-12 max-w-3xl text-center transition-all duration-700 md:mb-16 ${
             headerAnimation.isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Portfolio
+          <span className="inline-flex rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            Projects
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
-            Featured <span className="text-gradient">Projects</span>
+          <h2 className="mt-4 text-3xl font-bold sm:text-4xl md:text-5xl">
+            My Project <span className="text-gradient">Timeline</span>
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my work spanning web applications, mobile apps, and
-            game development
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
+            A clean timeline of my recent systems, web, mobile, and game
+            development projects, arranged from newest to oldest.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div
-          ref={gridRef}
-          className="grid lg:grid-cols-2 gap-5 md:gap-8 max-w-6xl mx-auto"
-        >
-          {projects.map((project, index) => {
-            const CardWrapper = project.link ? "a" : "div";
-            const cardProps = project.link
-              ? {
-                  href: project.link,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                }
-              : {};
+        <div ref={timelineRef} className="relative mx-auto max-w-6xl">
+          <div className="absolute bottom-0 left-5 top-0 w-px bg-border md:left-12" />
 
-            return (
-              <CardWrapper
-                key={project.title}
-                {...cardProps}
-                className={`group relative bg-card/50 backdrop-blur-sm border border-border rounded-2xl md:rounded-3xl p-5 sm:p-6 md:p-8 hover:border-primary/40 hover:bg-card/80 transition-all duration-500 block cursor-pointer ${
-                  gridVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
-                style={getDelay(index)}
-              >
-                {/* Project number badge */}
-                <div className="absolute -top-2 -left-2 md:-top-3 md:-left-3 w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-xs md:text-sm shadow-lg">
-                  0{index + 1}
-                </div>
+          <div className="space-y-8 md:space-y-12">
+            {projects.map((project, index) => {
+              const Icon = project.icon;
+              const cardClassName = `group block rounded-2xl border border-border/80 bg-card/80 p-5 shadow-card backdrop-blur-sm transition-all duration-300 md:min-h-60 md:p-10 ${
+                project.link
+                  ? "hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+                  : "hover:border-primary/30 hover:bg-card"
+              }`;
 
-                {/* Hover arrow */}
-                <div className="absolute top-4 right-4 md:top-6 md:right-6 w-9 h-9 md:w-10 md:h-10 rounded-full bg-secondary flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-                </div>
-
-                {/* Header with folder icon */}
-                <div className="flex items-start gap-3 md:gap-4 mb-5 pr-10 md:pr-12">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                    <Folder className="w-6 h-6 md:w-7 md:h-7 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold mb-2 group-hover:text-primary transition-colors break-words">
-                      {project.title}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs md:text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1.5 min-w-0">
-                        <Calendar className="w-3.5 h-3.5 shrink-0" />
-                        {project.year}
-                      </span>
-                      <span className="hidden sm:block w-1 h-1 rounded-full bg-muted-foreground" />
-                      <span>{project.role}</span>
+              const cardContent = (
+                <>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-base font-bold tracking-wide text-primary">
+                      {project.year}
+                    </p>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-xl font-bold leading-tight text-foreground md:text-2xl">
+                          {project.title}
+                        </h3>
+                        {project.badge && (
+                          <Badge
+                            variant="secondary"
+                            className="border border-primary/20 bg-primary/10 text-xs font-medium text-primary"
+                          >
+                            {project.badge}
+                          </Badge>
+                        )}
+                      </div>
+                      <p className="mt-2 text-sm font-medium text-muted-foreground">
+                        {project.role} - {project.period}
+                      </p>
+                      {project.link && (
+                        <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                          View Project
+                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </span>
+                      )}
                     </div>
                   </div>
-                </div>
 
-                {/* Description */}
-                <p className="text-muted-foreground mb-5 text-sm leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
+                  <p className="mt-7 max-w-4xl text-sm leading-7 text-muted-foreground md:text-base">
+                    {project.description}
+                  </p>
 
-                {/* Highlights */}
-                <ul className="mb-6 space-y-2.5">
-                  {project.highlights.map((highlight, i) => (
-                    <li
-                      key={i}
-                    className="text-sm text-muted-foreground flex items-start gap-2.5 md:gap-3"
+                  <ul className="mt-5 grid gap-2.5 text-sm leading-relaxed text-muted-foreground md:grid-cols-2">
+                    {project.highlights.map((highlight) => (
+                      <li key={highlight} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-7">
+                    <p className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                      Skills & Tools Used
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="border border-foreground/10 bg-secondary/80 text-xs font-medium text-muted-foreground transition-colors hover:bg-primary/15 hover:text-primary"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              );
+
+              return (
+                <div
+                  key={`${project.year}-${project.title}`}
+                  className={`relative pl-16 transition-all duration-700 md:pl-28 ${
+                    timelineVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={getDelay(index)}
+                >
+                  <div className="absolute left-0 top-6 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-foreground/20 bg-background shadow-md ring-8 ring-background md:left-6 md:h-12 md:w-12">
+                    <Icon className="h-4 w-4 text-primary md:h-5 md:w-5" />
+                  </div>
+
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cardClassName}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
-                  {project.tech.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="bg-secondary/80 text-muted-foreground border-0 hover:bg-primary/20 hover:text-primary transition-colors"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <article className={cardClassName}>{cardContent}</article>
+                  )}
                 </div>
-              </CardWrapper>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

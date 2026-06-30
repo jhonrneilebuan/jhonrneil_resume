@@ -3,7 +3,6 @@ import {
   Phone,
   MapPin,
   Send,
-  Download,
   ArrowUpRight,
 } from "lucide-react";
 import { Button } from "./ui/button";
@@ -148,21 +147,6 @@ const ContactSection = () => {
                   <a href="mailto:jhonrneilebuan@gmail.com">
                     <Send className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                     Send Message
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground rounded-full text-sm md:text-base"
-                >
-                  <a
-                    href="/resume/CV_EBUAN_JHON_R-NEIL_C.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    Download CV
                   </a>
                 </Button>
               </div>
