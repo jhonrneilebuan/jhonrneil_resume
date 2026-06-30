@@ -8,6 +8,7 @@ import courseraNetworkSecurity from "@/assets/certificates/coursera-b43fxq0xeao5
 import courseraLinuxSql from "@/assets/certificates/coursera-cntbvleui7ar.png";
 import courseraAssetsThreats from "@/assets/certificates/coursera-96klzttjv5gt.png";
 import courseraDetectionResponse from "@/assets/certificates/coursera-au14ntrz9dce.png";
+import courseraPythonAutomation from "@/assets/certificates/coursera-6rtt0w59ttz8.png";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -19,6 +20,13 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Automate Cybersecurity Tasks with Python",
+    issuer: "Google / Coursera",
+    date: "June 2026",
+    image: courseraPythonAutomation,
+    imageClassName: "object-contain p-3 bg-white",
+  },
   {
     title: "Sound the Alarm: Detection and Response",
     issuer: "Google / Coursera",

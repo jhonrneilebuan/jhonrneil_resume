@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-border/80 py-5 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>Copyright {currentYear} Jhon R-Neil Ebuan. All rights reserved.</p>
+          <p>&copy; {currentYear} Jhon R-Neil Ebuan. All rights reserved.</p>
           <button
             onClick={scrollToTop}
             className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-all hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
