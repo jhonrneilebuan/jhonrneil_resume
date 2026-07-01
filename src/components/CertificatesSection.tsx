@@ -9,6 +9,9 @@ import courseraLinuxSql from "@/assets/certificates/coursera-cntbvleui7ar.png";
 import courseraAssetsThreats from "@/assets/certificates/coursera-96klzttjv5gt.png";
 import courseraDetectionResponse from "@/assets/certificates/coursera-au14ntrz9dce.png";
 import courseraPythonAutomation from "@/assets/certificates/coursera-6rtt0w59ttz8.png";
+import courseraCybersecurityJobs from "@/assets/certificates/coursera-lzu98d1yzsuh.png";
+import courseraAiJobSearch from "@/assets/certificates/coursera-948weyiaimag.png";
+import courseraGoogleCybersecurity from "@/assets/certificates/coursera-euklbuq36qne.png";
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 
 interface Certificate {
@@ -20,6 +23,27 @@ interface Certificate {
 }
 
 const certificates: Certificate[] = [
+  {
+    title: "Google Cybersecurity Professional Certificate",
+    issuer: "Google / Coursera",
+    date: "July 2026",
+    image: courseraGoogleCybersecurity,
+    imageClassName: "object-contain p-3 bg-white",
+  },
+  {
+    title: "Accelerate Your Job Search with AI",
+    issuer: "Google / Coursera",
+    date: "July 2026",
+    image: courseraAiJobSearch,
+    imageClassName: "object-contain p-3 bg-white",
+  },
+  {
+    title: "Put It to Work: Prepare for Cybersecurity Jobs",
+    issuer: "Google / Coursera",
+    date: "July 2026",
+    image: courseraCybersecurityJobs,
+    imageClassName: "object-contain p-3 bg-white",
+  },
   {
     title: "Automate Cybersecurity Tasks with Python",
     issuer: "Google / Coursera",

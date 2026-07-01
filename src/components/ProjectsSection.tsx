@@ -153,12 +153,12 @@ const ProjectsSection = () => {
         </div>
 
         <div ref={timelineRef} className="relative mx-auto max-w-6xl">
-          <div className="absolute bottom-0 left-5 top-0 w-px bg-border md:left-12" />
+          <div className="absolute bottom-0 left-4 top-0 w-px bg-border sm:left-5 md:left-12" />
 
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-7 sm:space-y-8 md:space-y-12">
             {projects.map((project, index) => {
               const Icon = project.icon;
-              const cardClassName = `group block rounded-2xl border border-border/80 bg-card/80 p-5 shadow-card backdrop-blur-sm transition-all duration-300 md:min-h-60 md:p-10 ${
+              const cardClassName = `group block rounded-xl border border-border/80 bg-card/80 p-4 shadow-card backdrop-blur-sm transition-all duration-300 sm:rounded-2xl sm:p-5 md:min-h-60 md:p-10 ${
                 project.link
                   ? "hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
                   : "hover:border-primary/30 hover:bg-card"
@@ -172,7 +172,7 @@ const ProjectsSection = () => {
                     </p>
                     <div>
                       <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-xl font-bold leading-tight text-foreground md:text-2xl">
+                        <h3 className="break-words text-lg font-bold leading-tight text-foreground sm:text-xl md:text-2xl">
                           {project.title}
                         </h3>
                         {project.badge && (
@@ -196,7 +196,7 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  <p className="mt-7 max-w-4xl text-sm leading-7 text-muted-foreground md:text-base">
+                  <p className="mt-6 max-w-4xl text-sm leading-7 text-muted-foreground sm:mt-7 md:text-base">
                     {project.description}
                   </p>
 
@@ -231,15 +231,15 @@ const ProjectsSection = () => {
               return (
                 <div
                   key={`${project.year}-${project.title}`}
-                  className={`relative pl-16 transition-all duration-700 md:pl-28 ${
+                  className={`relative pl-12 transition-all duration-700 sm:pl-16 md:pl-28 ${
                     timelineVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-8"
                   }`}
                   style={getDelay(index)}
                 >
-                  <div className="absolute left-0 top-6 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-foreground/20 bg-background shadow-md ring-8 ring-background md:left-6 md:h-12 md:w-12">
-                    <Icon className="h-4 w-4 text-primary md:h-5 md:w-5" />
+                  <div className="absolute left-0 top-6 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-foreground/20 bg-background shadow-md ring-8 ring-background sm:h-10 sm:w-10 md:left-6 md:h-12 md:w-12">
+                    <Icon className="h-3.5 w-3.5 text-primary sm:h-4 sm:w-4 md:h-5 md:w-5" />
                   </div>
 
                   {project.link ? (
